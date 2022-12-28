@@ -82,19 +82,19 @@ if every element in A is also in B, then A ⊆ B.
 ### Algebra
 
 - **Associative laws**
-- (A ∪ B) ∪ C = A ∪ (B ∪ C)
+  - (A ∪ B) ∪ C = A ∪ (B ∪ C)
   - (A ∩ B) ∩ C = A ∩ (B ∩ C)
 
 - **Commutative laws**
-- A ∪ B = B ∪ A
+  - A ∪ B = B ∪ A
   - A ∩ B = B ∩ A
 
 - **Identity laws**
-- A ∪ ∅ = A
+  - A ∪ ∅ = A
   - A ∩ U = A
 
 - **Distributive laws**
-- A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+  - A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
   - A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
 
 - **Complement laws**
@@ -103,7 +103,7 @@ if every element in A is also in B, then A ⊆ B.
   - ∼ (∼ A) = A
   - ∼ ∅ = U
   - ∼ U = ∅
-  
+
 - **De Morgan's laws**
   - ∼ (A ∪ B) = ∼ A ∩ ∼ B
   - ∼ (A ∩ B) = ∼ A ∪ ∼ B
