@@ -72,12 +72,12 @@ if every element in A is also in B, then A ⊆ B.
 ### Operations
 
 - **Union**: A ∪ B = {x | x ∈ A or x ∈ B}
-- **Intersection**: A ∩ B = {x | x ∈ A and x ∈ B}.
-- **Relative complement**: A − B = {x | x ∈ A and x ∉ B}.
-- **Complement**: ∼ A = {x | x ∉ A} = U − A. (U is the universal set)
-- **Symmetric difference**: A ∆ B = {x | (x ∈ A and x ∉ B) or (x ∉ A and x ∈ B)}.
-- **Power set**: Pow(A) = {C |C ⊆ A}.
-- **Cartesian product**: A × B = {(a, b) | a ∈ A and b ∈ B}.
+- **Intersection**: A ∩ B = {x | x ∈ A and x ∈ B}
+- **Relative complement**: A − B = {x | x ∈ A and x ∉ B}
+- **Complement**: ∼ A = {x | x ∉ A} = U − A (U is the universal set)
+- **Symmetric difference**: A ∆ B = {x | (x ∈ A and x ∉ B) or (x ∉ A and x ∈ B)}
+- **Power set**: Pow(A) = {C |C ⊆ A}
+- **Cartesian product**: A × B = {(a, b) | a ∈ A and b ∈ B}
 
 ### Algebra
 
@@ -118,6 +118,7 @@ The cardinality of a finite set S is the number of elements in S, and is denoted
 
 - **Union of two sets**: |A ∪ B| = |A| + |B| − |A ∩ B|
 - **Union of three sets**: |A ∪ B ∪ C| = |A| + |B| + |C| − |A ∩ B| − |A ∩ C| − |B ∩ C| + |A ∩ B ∩ C|
+- **Power set of a set**: |Pow(A)| = |A| * |A + 1| / 2 + 1
 - **Cartesian product**: |A × B| = |A| * |B|
 
 ### Bit String
