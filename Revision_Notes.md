@@ -22,27 +22,33 @@ Here is a table that lists the various sets of numbers and whether they are clos
 | Integers         | Yes      | Yes         | Yes            | No       |
 | Rational numbers | Yes      | Yes         | Yes            | Yes      |
 | Real numbers     | Yes      | Yes         | Yes            | Yes      |
-| Prime numbers    | Yes      | Yes         | Yes            | No       |
+| Prime numbers    | No       | No          | No             | No       |
 | Even numbers     | Yes      | Yes         | Yes            | No       |
-| Odd numbers      | Yes      | Yes         | Yes            | No       |
+| Odd numbers      | No       | No          | Yes            | No       |
 
 ## Proof Techniques
 
 ### Proof by Contradiction
 
+#### Definition
+
 $$
 \text{if } (\neg p \to false) \text{ is } ture \text{, then } p \text{ is } true \text{.}
 $$
 
-Steps: Assume ¬p and find contradiction.
+#### Steps
+
+Assume ¬p and find contradiction.
 
 ### Proof by induction
+
+#### Definition
 
 $$
 \text{Let } P(n) \text{ be a predicate. if } P(0) \text{ is } true \text{, and } \forall n \in N \text{, } P(n) \to P(n+1) \text{ is true, then } \forall n \in N \text{, } P(n) \text{ is } true.
 $$
 
-Steps:
+#### Steps
 
 Base case ...
 
@@ -70,52 +76,56 @@ if every element in A is also in B, then A ⊆ B.
 - **Relative complement**: A − B = {x | x ∈ A and x ∉ B}.
 - **Complement**: ∼ A = {x | x ∉ A} = U − A. (U is the universal set)
 - **Symmetric difference**: A ∆ B = {x | (x ∈ A and x ∉ B) or (x ∉ A and x ∈ B)}.
-- **Power set**: The power set of a set A is the set of all subsets of A. It is denoted as P(A). For example, if A = {1, 2}, then P(A) = {{}, {1}, {2}, {1, 2}}.
-- **Cartesian product**: The Cartesian product of two sets A and B is the set of all ordered pairs (a, b) where a belongs to A and b belongs to B. It is denoted as A × B. For example, if A = {1, 2} and B = {3, 4}, then A × B = {(1, 3), (1, 4), (2, 3), (2, 4)}.
+- **Power set**: Pow(A) = {C |C ⊆ A}.
+- **Cartesian product**: A × B = {(a, b) | a ∈ A and b ∈ B}.
 
 ### Algebra
 
 - **Associative laws**
-
-  These laws involve rearranging the grouping of elements in a set operation. For example, the following two set operations are equivalent:
-
-  - (A ∪ B) ∪ C = A ∪ (B ∪ C)
+- (A ∪ B) ∪ C = A ∪ (B ∪ C)
   - (A ∩ B) ∩ C = A ∩ (B ∩ C)
 
 - **Commutative laws**
-
-  These laws involve rearranging the order of the sets in a set operation. For example, the following two set operations are equivalent:
-
-  - A ∪ B = B ∪ A
+- A ∪ B = B ∪ A
   - A ∩ B = B ∩ A
 
 - **Identity laws**
-
-  These laws involve the empty set and the universal set. For example:
-
-  - A ∪ ∅ = A
+- A ∪ ∅ = A
   - A ∩ U = A
 
 - **Distributive laws**
-
-  These laws involve distributing one set operation over another. For example:
-
-  - A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+- A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
   - A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
 
 - **Complement laws**
-
-  These laws involve the complement of a set. For example:
-
   - A ∪ ∼ A = U
   - A ∩ ∼ A = ∅
   - ∼ (∼ A) = A
   - ∼ ∅ = U
   - ∼ U = ∅
-
+  
 - **De Morgan's laws**
-
-  These laws involve the complement of a set and the set operations of union and intersection. For example:
-
   - ∼ (A ∪ B) = ∼ A ∩ ∼ B
   - ∼ (A ∩ B) = ∼ A ∪ ∼ B
+
+### Cardinality
+
+#### Definition
+
+The cardinality of a finite set S is the number of elements in S, and is denoted by |S|.
+
+#### Computation
+
+- **Union of two sets**: |A ∪ B| = |A| + |B| − |A ∩ B|
+- **Union of three sets**: |A ∪ B ∪ C| = |A| + |B| + |C| − |A ∩ B| − |A ∩ C| − |B ∩ C| + |A ∩ B ∩ C|
+- **Cartesian product**: |A × B| = |A| * |B|
+
+### Bit String
+
+#### Definition
+
+a sequence of bits (binary digits), which can be either 0 or 1.
+
+#### Characteristic Vectors
+
+A characteristic vector is a way of representing a subset of a larger set using bit string. The length of the characteristic vector is equal to the number of elements in the larger set, and each element is represented by a single bit. If the bit corresponding to an element is 1, it means that the element is in the subset; if the bit is 0, it means that the element is not in the subset.
