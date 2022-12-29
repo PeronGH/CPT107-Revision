@@ -4,10 +4,10 @@
 
 ### Brief Description
 
-* **Natural numbers**: These are the numbers that we use to count things. They are also known as the counting numbers and are denoted by the symbol N. The natural numbers are 1, 2, 3, 4, 5, 6, etc.
-* **Integers**: These are the numbers that include the natural numbers, their negatives, and zero. They are denoted by the symbol Z. The integers are ..., -3, -2, -1, 0, 1, 2, 3, ...
-* **Rational numbers**: These are numbers that can be expressed as the ratio of two integers. They are denoted by the symbol Q. Examples of rational numbers include 1/2, 3/4, 5/6, etc.
-* **Real numbers**: These are numbers that can be represented on a number line. They include all of the rational numbers as well as some numbers that cannot be expressed as the ratio of two integers (such as the square root of 2 or pi). They are denoted by the symbol R.
+* **Natural numbers**: These are the numbers that we use to count things. They are also known as the counting numbers and are denoted by the symbol **N**. The natural numbers are 1, 2, 3, 4, 5, 6, etc.
+* **Integers**: These are the numbers that include the natural numbers, their negatives, and zero. They are denoted by the symbol **Z**. The integers are ..., -3, -2, -1, 0, 1, 2, 3, ...
+* **Rational numbers**: These are numbers that can be expressed as the ratio of two integers. They are denoted by the symbol **Q**. Examples of rational numbers include 1/2, 3/4, 5/6, etc.
+* **Real numbers**: These are numbers that can be represented on a number line. They include all of the rational numbers as well as some numbers that cannot be expressed as the ratio of two integers (such as the square root of 2 or pi). They are denoted by the symbol **R**.
 * **Prime numbers**: These are numbers that are divisible only by 1 and themselves. The first few prime numbers are 2, 3, 5, 7, 11, etc.
 * **Even numbers**: These are numbers that are divisible by 2. Examples of even numbers include 2, 4, 6, 8, 10, etc.
 * **Odd numbers**: These are numbers that are not divisible by 2. Examples of odd numbers include 1, 3, 5, 7, 9, etc.
@@ -257,3 +257,5 @@ Then *(g o f)(x) = g(f(x)).*
 ### Pigeonhole Principle
 
 If there are more elements in the domain than in the range, then there must be at least one element in the domain that is related to more than one element in the range. Thus, the function is not one-to-one.
+
+## Propositional Logic and FOL
