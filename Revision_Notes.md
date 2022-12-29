@@ -201,7 +201,18 @@ Unary relations are just subsets of a set.
     - x is a **predecessor** of y iff x ≠ y ∧ xRy
     - If x is a predecessor of y and there is no z ∉ {x,y} for which xRz and zRy, we call x an **immediate predecessor** of y.
     - **Hasse diagram** is a digraph where:
-      - Vertices of the digraph are the elements of the partial order
+      - Vertices of the digraph are the elements of the partial order。
       - The edges of the digraph are given by the “immediate predecessor” relation.
 - **Total order**: <u>comparable</u> partial order.
   - **Comparable** means ∀x,y ∈ S, xRy ∨ yRx
+
+### Operations
+
+- Given a relation R ⊆ A × B, we define the **inverse relation** R<sup>-1</sup> ⊆ B × A by R<sup>-1</sup> = {(b,a) | (a,b) ∈ R}.
+
+- Let R ⊆ A × B and S ⊆ B × C. The **composition** of R and S, denoted by S ◦ R, is the binary relation between A and C given by 
+
+  S ◦ R = {(a,c) | (∃b ∈ B)( aRb ∧ bSc )}.
+
+## Functions
+
