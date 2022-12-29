@@ -250,5 +250,10 @@ Suppose *f*: A -> B.
 
 ### Composition of Functions
 
+Suppose *f*: A -> B and *g*: B -> C
+
+Then *(g o f)(x) = g(f(x)).*
+
 ### Pigeonhole Principle
 
+If there are more elements in the domain than in the range, then there must be at least one element in the domain that is related to more than one element in the range. Thus, the function is not one-to-one.
