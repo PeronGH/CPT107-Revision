@@ -173,16 +173,16 @@ Unary relations are just subsets of a set.
 
 ### Properties
 
-- Reflexive:
+- **Reflexive**:
   - ∀x ∈ A, xRx
   - To check for reflexivity, you can verify that every element in the set appears on the left-hand side of the relation at least once and is related to itself.
-- Symmetric:
+- **Symmetric**:
   - ∀x,y ∈ A, xRy → yRx
   - To check for symmetry, you can verify that for every pair of elements A and B that are related, if (A, B) is in the relation, then (B, A) is also in the relation.
-- Antisymmetric:
+- **Antisymmetric**:
   - ∀x,y ∈ A, (xRy ∧ yRx) → x = y
   - To check for antisymmetry, you can verify that for every pair of elements A and B that are related, if (A, B) and (B, A) are both in the relation, then A and B must be the same element.
-- Transitive:
+- **Transitive**:
   - ∀x,y,z ∈ A, (xRy ∧ yRz) → xRz
   - To check for transitivity, you can verify that for every triple of elements A, B, and C, if (A, B) and (B, C) are both in the relation, then (A, C) is also in the relation. 
   - To compute the **transitive closure**:
