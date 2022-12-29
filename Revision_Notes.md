@@ -30,7 +30,7 @@ Here is a table that lists the various sets of numbers and whether they are clos
 
 #### Definition
 
-if (¬p → false) is true, then p is true.
+If (¬p → false) is true, then p is true.
 
 #### Steps
 
@@ -61,7 +61,7 @@ Order and repetition do not matter
 
 ### Subset
 
-if every element in A is also in B, then A ⊆ B.
+If every element in A is also in B, then A ⊆ B.
 
 ### Operations
 
@@ -119,10 +119,53 @@ The cardinality of a finite set S is the number of elements in S, and is denoted
 
 #### Definition
 
-a sequence of bits (binary digits), which can be either 0 or 1.
+A sequence of bits (binary digits), which can be either 0 or 1.
 
 #### Characteristic Vectors
 
 A characteristic vector is a way of representing a subset of a larger set using bit string. The length of the characteristic vector is equal to the number of elements in the larger set, and each element is represented by a single bit. If the bit corresponding to an element is 1, it means that the element is in the subset; if the bit is 0, it means that the element is not in the subset.
 
 ## Relations
+
+### Definition
+
+#### Binary Relation
+
+A binary relation R from a set A to a set B is a subset of A × B, denoted as <u>R ⊆ A × B</u>.
+
+#### Unary Relation
+
+Unary relations are just subsets of a set.
+
+### Notation
+
+#### Symbols
+
+<u>(a, b) ∈ R</u> can be denoted as <u>a R b</u>, which is a predicate that a is R-related to b.
+
+#### Directed Graphs
+
+- Let A and B be two finite sets and R a binary relation between these two sets (i.e., R ⊆ A × B).
+- We represent the elements of these two sets as vertices of a graph.
+- For each (a, b) ∈ R, we draw an arrow linking the related elements.
+- This is called the directed graph (or digraph) of R.
+
+#### Matrices
+
+- Another way of representing a binary relation between finite sets uses an array.
+
+- Let A = {a1, . . . , an}, B = {b1, . . . , bm} and R ⊆ A × B. We represent R by an array M of n rows and m columns.
+
+- Such an array is called a n by m matrix.
+
+- The entry in row i and column j of this matrix is given by M(i, j) where
+  $$
+  \begin{equation}
+  M(i,j)=
+      \begin{cases}
+          T & \text{if } & (a_i, b_j) \in R\\
+          F & \text{if } & (a_i, b_j) \notin R
+      \end{cases}
+  \end{equation}
+  $$
+  
