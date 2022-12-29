@@ -141,7 +141,7 @@ Unary relations are just subsets of a set.
 
 #### Symbols
 
-<u>(a, b) ∈ R</u> can be denoted as <u>a R b</u>, which is a predicate that a is R-related to b.
+<u>(a, b) ∈ R</u> can be denoted as aRb, which is a predicate that a is R-related to b.
 
 #### Directed Graphs
 
@@ -154,7 +154,7 @@ Unary relations are just subsets of a set.
 
 - Another way of representing a binary relation between finite sets uses an array.
 
-- Let A = {a1, . . . , an}, B = {b1, . . . , bm} and R ⊆ A × B. We represent R by an array M of n rows and m columns.
+- Let A = {a<sub>1</sub>, . . . , a<sub>n</sub>}, B = {b<sub>1</sub>, . . . , b<sub>m</sub>} and R ⊆ A × B. We represent R by an array M of n rows and m columns.
 
 - Such an array is called a n by m matrix.
 
@@ -169,3 +169,39 @@ Unary relations are just subsets of a set.
   \end{equation}
   $$
   
+- 
+
+### Properties
+
+- Reflexive:
+  - ∀x ∈ A, xRx
+  - To check for reflexivity, you can verify that every element in the set appears on the left-hand side of the relation at least once and is related to itself.
+- Symmetric:
+  - ∀x,y ∈ A, xRy → yRx
+  - To check for symmetry, you can verify that for every pair of elements A and B that are related, if (A, B) is in the relation, then (B, A) is also in the relation.
+- Antisymmetric:
+  - ∀x,y ∈ A, (xRy ∧ yRx) → x = y
+  - To check for antisymmetry, you can verify that for every pair of elements A and B that are related, if (A, B) and (B, A) are both in the relation, then A and B must be the same element.
+- Transitive:
+  - ∀x,y,z ∈ A, (xRy ∧ yRz) → xRz
+  - To check for transitivity, you can verify that for every triple of elements A, B, and C, if (A, B) and (B, C) are both in the relation, then (A, C) is also in the relation. 
+  - To compute the **transitive closure**:
+    1. Start with the original relation as the transitive closure.
+    2. Repeat the following step until the transitive closure does not change:
+       - For each pair (x,y) in the transitive closure, if there exists a z such that (x,z) and (z,y) are also in the transitive closure, add (x,y) to the transitive closure.
+
+### Special Relations
+
+- **Equivalence relation**: reflexive, symmetric and transitive
+  - **Equivalance class**
+    - A set of elements that are equivalent to each other under a given equivalence relation. 
+    - E<sub>x</sub> = { y ∈ S | yRx }
+- **Partial order**: reflexive, antisymmetric and transitive
+  - A set S with a partial ordering R is called a **partially ordered set**, or **poset**, denoted by (S,R)
+    - x is a **predecessor** of y iff x ≠ y ∧ xRy
+    - If x is a predecessor of y and there is no z ∉ {x,y} for which xRz and zRy, we call x an **immediate predecessor** of y.
+    - **Hasse diagram** is a digraph where:
+      - Vertices of the digraph are the elements of the partial order
+      - The edges of the digraph are given by the “immediate predecessor” relation.
+- **Total order**: <u>comparable</u> partial order.
+  - **Comparable** means ∀x,y ∈ S, xRy ∨ yRx
