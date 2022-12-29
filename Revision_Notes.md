@@ -208,7 +208,9 @@ Unary relations are just subsets of a set.
 
 ### Operations
 
-- Given a relation R ⊆ A × B, we define the **inverse relation** R<sup>-1</sup> ⊆ B × A by R<sup>-1</sup> = {(b,a) | (a,b) ∈ R}.
+- Given a relation R ⊆ A × B, we define the **inverse relation** R<sup>-1</sup> ⊆ B × A by 
+
+  R<sup>-1</sup> = {(b,a) | (a,b) ∈ R}.
 
 - Let R ⊆ A × B and S ⊆ B × C. The **composition** of R and S, denoted by S ◦ R, is the binary relation between A and C given by 
 
