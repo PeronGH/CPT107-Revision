@@ -12,8 +12,6 @@
 * **Even numbers**: These are numbers that are divisible by 2. Examples of even numbers include 2, 4, 6, 8, 10, etc.
 * **Odd numbers**: These are numbers that are not divisible by 2. Examples of odd numbers include 1, 3, 5, 7, 9, etc.
 
-
-
 Here is a table that lists the various sets of numbers and whether they are closed under various operations:
 
 | Set of Numbers   | Addition | Subtraction | Multiplication | Division |
@@ -32,9 +30,7 @@ Here is a table that lists the various sets of numbers and whether they are clos
 
 #### Definition
 
-$$
-\text{if } (\neg p \to false) \text{ is } ture \text{, then } p \text{ is } true \text{.}
-$$
+if (¬p → false) is true, then p is true.
 
 #### Steps
 
@@ -44,9 +40,7 @@ Assume ¬p and find contradiction.
 
 #### Definition
 
-$$
-\text{Let } P(n) \text{ be a predicate. if } P(0) \text{ is } true \text{, and } \forall n \in N \text{, } P(n) \to P(n+1) \text{ is true, then } \forall n \in N \text{, } P(n) \text{ is } true.
-$$
+Let P(n) be a predicate. If P(0) ∧ (∀n ∈ N, P(n) → P(n+1)) is true, then ∀n ∈ N, P(n) is true.
 
 #### Steps
 
@@ -63,7 +57,7 @@ Induction step ...
 
 ### Equality
 
-Order and repeatition do not matter
+Order and repetition do not matter
 
 ### Subset
 
@@ -130,3 +124,5 @@ a sequence of bits (binary digits), which can be either 0 or 1.
 #### Characteristic Vectors
 
 A characteristic vector is a way of representing a subset of a larger set using bit string. The length of the characteristic vector is equal to the number of elements in the larger set, and each element is represented by a single bit. If the bit corresponding to an element is 1, it means that the element is in the subset; if the bit is 0, it means that the element is not in the subset.
+
+## Relations
