@@ -168,8 +168,6 @@ Unary relations are just subsets of a set.
       \end{cases}
   \end{equation}
   $$
-  
-- 
 
 ### Properties
 
@@ -193,7 +191,7 @@ Unary relations are just subsets of a set.
 ### Special Relations
 
 - **Equivalence relation**: reflexive, symmetric and transitive
-  - **Equivalance class**
+  - **Equivalence class**
     - A set of elements that are equivalent to each other under a given equivalence relation. 
     - E<sub>x</sub> = { y ∈ S | yRx }
 - **Partial order**: reflexive, antisymmetric and transitive
@@ -217,4 +215,40 @@ Unary relations are just subsets of a set.
   S ◦ R = {(a,c) | (∃b ∈ B)( aRb ∧ bSc )}.
 
 ## Functions
+
+### Definition
+
+F: A -> B is a relation that:
+
+1. ∀a ∈ A, ∃b ∈ B, (a, b) ∈ F
+2. if (a, b) ∈ F ∧ (a, c) ∈ F, then b = c
+
+### Concepts
+
+Suppose *f*: A -> B.
+
+- A is called the **domain** of *f*.
+- B is called the **codomain** of *f*.
+- The **image** or **range** of *f* is the set of all output values that the function can produce.
+
+### Properties
+
+- **Injective** (or "**one-to-one**"): A function f: X -> Y is injective if for all x<sub>1</sub>, x<sub>2</sub> in X, f(x<sub>1</sub>) = f(x<sub>2</sub>) implies x<sub>1</sub> = x<sub>2</sub>. 
+  - This means that the function maps different elements of the domain to different elements of the codomain.
+- **Surjective** (or "**onto**"): A function f: X -> Y is surjective if for all y in Y, there exists an x in X such that f(x) = y. 
+  - This means that the function maps every element of the codomain to some element in the domain.
+- **Bijective**: A function f: X -> Y is bijective if it is both injective and surjective. 
+  - This means that the function is a one-to-one correspondence between the elements of the domain and the codomain.
+- **Invertible**: A function f: X -> Y is invertible if there exists a function g: Y -> X such that for all x in X, g(f(x)) = x and for all y in Y, f(g(y)) = y. 
+  - In other words, the function has an inverse function that "undoes" the original function.
+  - **Theorem**: a function f is invertible iff it is a bijection.
+  - How to find the inverse for f(x):
+    1. Let y = f(x)
+    2. Solve for "x" in terms of "y"
+    3. Replace "x" with "f<sup>-1</sup>(y)" 
+    4. Replace all "y" with "x"
+
+### Composition of Functions
+
+### Pigeonhole Principle
 
