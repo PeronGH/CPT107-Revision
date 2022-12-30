@@ -21,8 +21,7 @@ const Combinations = {
 };
 
 console.log(`Welcome!
-Type a command to get started.
-Basic structure: <mode> <n> <r>
+Type command: <mode> <n> <r>
 
 Modes:
     pwr - Permutations with repetitions

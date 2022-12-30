@@ -414,7 +414,6 @@ Permutations are **arrangements** of objects in which the <u>order of the object
 
 - This refers to permutations in which all the objects are identical.
 - In general, the number of permutations of n objects with r of the objects identical objects is $\frac{n!}{r!}$.
-- For example, if we have a set of three identical objects A, there is only one possible permutation: (A, A, A).
 
 ### Combinations
 
@@ -424,11 +423,9 @@ Combinations are **selections** of objects in which the <u>order of the objects 
 
 - This refers to combinations in which an object can be used more than once.
 - $C(n+r-1, r) = \binom{n+r-1}{r} = \frac{(n+r-1)!}{r!(n-1)!}$
-- For example, if we have a set of two objects (A and B) and we want to generate all possible combinations with repetition, we would have the following possibilities: (A), (B), (A, A), (A, B), (B, B), (A, A, A), (A, A, B), (A, B, B), and (B, B, B).
 
 #### Combinations without Repetition
 
 - This refers to combinations in which each object can only be used once.
 - The number of r-combinations of a set of size n is called **binomial coefficient**, denoted $C(n, r)$, pronounced "n choose r", and given by $C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$.
-- For example, if we have a set of three objects (A, B, and C) and we want to generate all possible combinations without repetition, we would have the following possibilities: (A), (B), (C), (A, B), (A, C), (B, C), and (A, B, C).
 
