@@ -359,26 +359,26 @@ The process of determining the truth value of a formula is called evaluation. In
 
 #### Product Rule (Multiplication Principle)
 
-- If there are m ways to perform one task and n ways to perform a second task, then there are <u>m * n</u> ways to perform both tasks.
+- If there are m ways to perform one task and n ways to perform a second task, then there are $m \times n$ ways to perform both tasks.
 - This principle is used when two events are independent, meaning that the outcome of one event does not affect the outcome of the other event.
 - For example, if there are 2 ways to choose a shirt (red or blue) and 3 ways to choose a pair of pants (jeans, slacks, or shorts), then there are 2 * 3 = 6 ways to choose a complete outfit.
 - Explanation with set theory: |A × B| = |A| * |B|
 
 #### Sum Rule (Addition Principle)
 
-- If there are m ways to perform one task and n ways to perform a second task, then there are <u>m + n</u> ways to perform either task.
+- If there are m ways to perform one task and n ways to perform a second task, then there are $m + n$ ways to perform either task.
 - This principle is used when two events are mutually exclusive, meaning that the outcome of one event precludes the possibility of the other event occurring.
 - For example, Friday night you can see one of five movies, go to one of two concerts, or stay home. There are 5 + 2 + 1 = 8 choices for spending Friday night.
 - Explanation with set theory: |A U B| = |A| + |B| when A ∩ B = ∅
 
 #### Subtraction Rule (Subtraction Principle)
 
-- If there are m ways to perform a task and n of those ways are not allowed, then there are <u>m - n</u> ways to perform the task.
+- If there are m ways to perform a task and n of those ways are not allowed, then there are $m - n$ ways to perform the task.
 - This principle is used when there are restrictions on the ways in which a task can be performed.
 
 #### Division Rule (Division Principle)
 
-- If a task can be performed in m ways and each of those ways can be divided into n sub-tasks, then there are <u>m / n</u> ways to perform each sub-task.
+- If a task can be performed in m ways and each of those ways can be divided into n sub-tasks, then there are $\frac{m}{n}$ ways to perform each sub-task.
 - This principle is used when a task can be divided into smaller sub-tasks that can be performed independently.
 - For example, Bob counts the number of people in the room by courting the number of ears (assume every person has two ears). To get the number of people, he needs to divide the number of ears by 2.
 
@@ -388,12 +388,12 @@ Arrangements refer to the ways in which objects can be placed in a particular or
 
 #### With Repetitions
 
-- The number of k-arrangements of the elements of an n-set is equal to <u>n^k^</u>.
+- The number of k-arrangements of the elements of an n-set is equal to $n^k$.
 - For example, the number of 5-digit positive integers without digits 6, 7, 8, and 9 in their decimal representation is 6^5^ - 6^4^ = 6480.
 
 #### Without Repetitions
 
-- The number of k-arrangements without repetitions of the elements of an n-set is equal to <u>n(n−1)...(n−k+1) = n! / (n - k)!</u>.
+- The number of k-arrangements without repetitions of the elements of an n-set is equal to $\frac{n!}{(n-r)!}$.
 
 - For example, let A = {a, b, c, d}. All 2-arrangements without repetitions of the elements of set A are the following: *ab, ac, ad, ba, bc, bd, ca, cb, cd, da, db, dc*.
 
