@@ -259,3 +259,19 @@ Then *(g o f)(x) = g(f(x)).*
 If there are more elements in the domain than in the range, then there must be at least one element in the domain that is related to more than one element in the range. Thus, the function is not one-to-one.
 
 ## Propositional Logic and FOL
+
+### Notations
+
+| Symbol | Name                   | Description                                                  |
+| ------ | ---------------------- | ------------------------------------------------------------ |
+| ¬      | Negation               | Negates the truth value of a proposition. For example, if p is a proposition that is true, then ¬p is a proposition that is false. |
+| ∧      | Conjunction            | A conjunction is a compound proposition that is true only if both of its conjuncts (the propositions it connects) are true. For example, if p and q are propositions, then the conjunction "p ∧ q" is true if both p and q are true. |
+| ∨      | Disjunction            | A disjunction is a compound proposition that is true if at least one of its disjuncts (the propositions it connects) is true. For example, if p and q are propositions, then the disjunction "p ∨ q" is true if either p or q (or both) are true. |
+| →      | Implication            | An implication is a compound proposition that is true only if the antecedent (the proposition that comes before the "→") is false or the consequent (the proposition that comes after the "→") is true. For example, if p and q are propositions, then the conditional "p → q" is true if either p is false or q is true (or both). |
+| ≡      | Biimplication          | A biimplication is a compound proposition that is true only if both of its sides (the propositions on either side of the "≡") are either both true or both false. For example, if p and q are propositions, then the biimplication "p ≡ q" is true if both p and q are true, or if both p and q are false. |
+| ⊤      | True                   | A symbol that represents a proposition that is always true, which is a **tautology**. |
+| ⊥      | False                  | A symbol that represents a proposition that is always false, which is a **contradiction**. |
+| ∀      | Universal quantifier   | A quantifier that is used to indicate that a proposition holds for all values of a variable. For example, if x is a variable and p(x) is a proposition that depends on x, then the universal quantification "∀x, p(x)" is a proposition that is true if p(x) is true for all values of x. |
+| ∃      | Existential quantifier | A quantifier that is used to indicate that a proposition holds for at least one value of a variable. For example, if x is a variable and p(x) is a proposition that depends on x, then the existential quantification "∃x, p(x)" is a proposition that is true if p(x) is true for at least one value of x. |
+| ⊨      | Semantic consequence   | A relationship between two statements or propositions, where one statement (the conclusion) logically follows from the other statement (the premise). For example, if the premise is "All dogs are mammals" and the conclusion is "Fido is a mammal", then the conclusion "Fido is a mammal" is a semantic consequence of the premise "All dogs are mammals". This can be symbolized as "All dogs are mammals ⊨ Fido is a mammal". |
+
