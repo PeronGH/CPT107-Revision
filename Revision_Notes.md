@@ -408,12 +408,13 @@ Permutations are **arrangements** of objects in which the <u>order of the object
 
 - For example, let A = {a, b, c, d}. All 2-arrangements without repetitions of the elements of set A are the following: *ab, ac, ad, ba, bc, bd, ca, cb, cd, da, db, dc*.
 
-  The total number of such arrangements is 4 * 3 = 12.
+  The total number of such arrangements is $\frac{4!}{(4-2)!}=12$.
 
 #### Permutation of Identical Objects
 
-- This refers to permutations in which all the objects are identical.
-- In general, the number of permutations of n objects with r of the objects identical objects is $\frac{n!}{r!}$.
+- This refers to permutations in which some of the objects are identical.
+- The number of permutations of n objects with n~1~ identical objects of type 1, n~2~ identical objects of type 2, ..., and n~k~ identical objects of type k is $\frac{n!}{n_1!n_2! \dots n_k!}$
+- For example, the number of seven-letter words that can be formed using the letters of the word “BENZENE” is $\frac{7!}{3!2!}=420$.
 
 ### Combinations
 

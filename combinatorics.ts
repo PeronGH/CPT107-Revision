@@ -20,18 +20,19 @@ const Combinations = {
     },
 };
 
-console.log(`Welcome!
-Type command: <mode> <n> <r>
+console.log(`Type command: <mode> <n> <r>
 
 Modes:
     pwr - Permutations with repetitions
     pnr - Permutations without repetitions
     cwr - Combinations with repetitions
     cnr - Combinations without repetitions
+    !   - Factorial
+    q   - Quit
 `);
 // Command line interface
 while (true) {
-    const [mode, n, r] = prompt('> ')!.split(/\s+/);
+    const [mode, n, r] = prompt('>')!.split(/\s+/);
     if (mode === 'q') {
         break;
     } else if (mode === 'pwr') {
@@ -42,6 +43,8 @@ while (true) {
         console.log(Combinations.withRepetitions(parseInt(n), parseInt(r)));
     } else if (mode === 'cnr') {
         console.log(Combinations.withoutRepetitions(parseInt(n), parseInt(r)));
+    } else if (mode === '!') {
+        console.log(factorial(parseInt(n)));
     } else {
         console.log('Invalid command');
     }
