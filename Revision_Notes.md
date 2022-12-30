@@ -392,7 +392,7 @@ In the following formulas:
 
 ### Permutations
 
-Permutations are **arrangements** of objects in which the <u>order of the objects matters</u>.
+Permutations are **arrangements** of objects in which the <u>order matters</u>.
 
 ####  Permutation with Repetitions
 
@@ -418,7 +418,7 @@ Permutations are **arrangements** of objects in which the <u>order of the object
 
 ### Combinations
 
-Combinations are **selections** of objects in which the <u>order of the objects does not matter</u>.
+Combinations are **selections** of objects in which the <u>order does not matter</u>.
 
 #### Combinations with Repetitions
 
@@ -429,4 +429,6 @@ Combinations are **selections** of objects in which the <u>order of the objects 
 
 - This refers to combinations in which each object can only be used once.
 - The number of r-combinations of a set of size n is called **binomial coefficient**, denoted $C(n, r)$, pronounced "n choose r", and given by $C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$.
+- For example, the number of binary strings of 17 zeros and 8 ones in which no two ones are adjacent is $\binom{18}{8}=43758$.
 
+## Probability
