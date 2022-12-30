@@ -31,20 +31,24 @@ Modes:
     q   - Quit
 `);
 // Command line interface
+const commands: { [mode: string]: (n: string, r: string) => void } = {
+    pwr: (n, r) =>
+        console.log(Permutations.withRepetitions(parseInt(n), parseInt(r))),
+    pnr: (n, r) =>
+        console.log(Permutations.withoutRepetitions(parseInt(n), parseInt(r))),
+    cwr: (n, r) =>
+        console.log(Combinations.withRepetitions(parseInt(n), parseInt(r))),
+    cnr: (n, r) =>
+        console.log(Combinations.withoutRepetitions(parseInt(n), parseInt(r))),
+    '!': n => console.log(factorial(parseInt(n))),
+};
+
 while (true) {
     const [mode, n, r] = prompt('>')!.split(/\s+/);
     if (mode === 'q') {
         break;
-    } else if (mode === 'pwr') {
-        console.log(Permutations.withRepetitions(parseInt(n), parseInt(r)));
-    } else if (mode === 'pnr') {
-        console.log(Permutations.withoutRepetitions(parseInt(n), parseInt(r)));
-    } else if (mode === 'cwr') {
-        console.log(Combinations.withRepetitions(parseInt(n), parseInt(r)));
-    } else if (mode === 'cnr') {
-        console.log(Combinations.withoutRepetitions(parseInt(n), parseInt(r)));
-    } else if (mode === '!') {
-        console.log(factorial(parseInt(n)));
+    } else if (mode in commands) {
+        commands[mode](n, r);
     } else {
         console.log('Invalid command');
     }
