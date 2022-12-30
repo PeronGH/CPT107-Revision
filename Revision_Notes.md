@@ -4,7 +4,7 @@
 
 ### Brief Description
 
-#### Natural numbers
+#### Natural Numbers
 
 These are the numbers that we use to count things. They are also known as the counting numbers and are denoted by the symbol **N**. The natural numbers are 1, 2, 3, 4, 5, 6, etc.
 
@@ -12,23 +12,23 @@ These are the numbers that we use to count things. They are also known as the co
 
 These are the numbers that include the natural numbers, their negatives, and zero. They are denoted by the symbol **Z**. The integers are ..., -3, -2, -1, 0, 1, 2, 3, ...
 
-#### Rational numbers
+#### Rational Numbers
 
 These are numbers that can be expressed as the ratio of two integers. They are denoted by the symbol **Q**. Examples of rational numbers include 1/2, 3/4, 5/6, etc.
 
-#### Real numbers
+#### Real Numbers
 
 These are numbers that can be represented on a number line. They include all of the rational numbers as well as some numbers that cannot be expressed as the ratio of two integers (such as the square root of 2 or pi). They are denoted by the symbol **R**.
 
-#### Prime numbers
+#### Prime Numbers
 
 These are numbers that are divisible only by 1 and themselves. The first few prime numbers are 2, 3, 5, 7, 11, etc.
 
-#### Even numbers
+#### Even Numbers
 
 These are numbers that are divisible by 2. Examples of even numbers include 2, 4, 6, 8, 10, etc.
 
-#### Odd numbers
+#### Odd Numbers
 
 These are numbers that are not divisible by 2. Examples of odd numbers include 1, 3, 5, 7, 9, etc.
 
@@ -97,27 +97,27 @@ If every element in A is also in B, then A ⊆ B.
 
 ### Algebra
 
-#### Associative laws
+#### Associative Laws
 
 - (A ∪ B) ∪ C = A ∪ (B ∪ C)
 - (A ∩ B) ∩ C = A ∩ (B ∩ C)
 
-#### Commutative laws
+#### Commutative Laws
 
 - A ∪ B = B ∪ A
 - A ∩ B = B ∩ A
 
-#### Identity laws
+#### Identity Laws
 
 - A ∪ ∅ = A
 - A ∩ U = A
 
-#### Distributive laws
+#### Distributive Laws
 
 - A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
 - A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)
 
-#### Complement laws
+#### Complement Laws
 
 - A ∪ ∼ A = U
 - A ∩ ∼ A = ∅
@@ -125,7 +125,7 @@ If every element in A is also in B, then A ⊆ B.
 - ∼ ∅ = U
 - ∼ U = ∅
 
-#### De Morgan's laws
+#### De Morgan's Laws
 
 - ∼ (A ∪ B) = ∼ A ∩ ∼ B
 - ∼ (A ∩ B) = ∼ A ∪ ∼ B
@@ -225,17 +225,19 @@ Unary relations are just subsets of a set.
 
 ### Special Relations
 
-#### Equivalence relation
+#### Equivalence Relation
 
-is reflexive, symmetric and transitive
+- It is reflexive, symmetric and transitive.
+
 
 - **Equivalence class**
   - A set of elements that are equivalent to each other under a given equivalence relation. 
   - E<sub>x</sub> = { y ∈ S | yRx }
 
-#### Partial order
+#### Partial Order
 
-is reflexive, antisymmetric and transitive
+- It is reflexive, antisymmetric and transitive.
+
 
 - A set S with a partial ordering R is called a **partially ordered set**, or **poset**, denoted by (S,R)
   - x is a **predecessor** of y iff x ≠ y ∧ xRy
@@ -244,9 +246,10 @@ is reflexive, antisymmetric and transitive
     - Vertices of the digraph are the elements of the partial order。
     - The edges of the digraph are given by the “immediate predecessor” relation.
 
-#### Total order
+#### Total Order
 
-is <u>comparable</u> partial order
+- It is <u>comparable</u> partial order.
+
 
 - **Comparable** means ∀x,y ∈ S, xRy ∨ yRx
 
@@ -334,27 +337,27 @@ If there are more elements in the domain than in the range, then there must be a
 
 ### Laws for equivalences
 
-#### Associative laws
+#### Associative Laws
 
 - (p ∧ q) ∧ r ≡ p ∧ (q ∧ r)
 - (p ∨ q) ∨ r ≡ p ∨ (q ∨ r)
 
-#### Commutative laws
+#### Commutative Laws
 
 - p ∧ q ≡ q ∧ p
 - p ∨ q ≡ q ∨ p
 
-#### Identity laws
+#### Identity Laws
 
 - p ∧ ⊤ ≡ p
 - p ∨ ⊥ ≡ p
 
-#### Distributive laws
+#### Distributive Laws
 
 - p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
 - p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)
 
-#### Complement laws
+#### Complement Laws
 
 - p ∧ ¬p ≡ ⊥
 - p ∨ ¬p ≡ ⊤
@@ -362,7 +365,7 @@ If there are more elements in the domain than in the range, then there must be a
 - ¬⊤ ≡ ⊥
 - ¬⊥ ≡ ⊤
 
-#### De Morgan's laws
+#### De Morgan's Laws
 
 - ¬(p ∧ q) ≡ ¬p ∨ ¬q
 - ¬(p ∨ q) ≡ ¬p ∧ ¬q
@@ -450,7 +453,7 @@ The process of determining the truth value of a formula is called evaluation. In
 - This principle is used when a task can be divided into smaller sub-tasks that can be performed independently.
 - For example, Bob counts the number of people in the room by courting the number of ears (assume every person has two ears). To get the number of people, he needs to divide the number of ears by 2.
 
-### About formulas
+### About Formulas
 
 In the following formulas:
 
