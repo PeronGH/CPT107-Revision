@@ -388,13 +388,60 @@ Arrangements refer to the ways in which objects can be placed in a particular or
 
 #### With Repetitions
 
-- The number of k-arrangements of the elements of an n-set is equal to n^k^.
+- The number of k-arrangements of the elements of an n-set is equal to <u>n^k^</u>.
 - For example, the number of 5-digit positive integers without digits 6, 7, 8, and 9 in their decimal representation is 6^5^ - 6^4^ = 6480.
 
 #### Without Repetitions
 
-- The number of k-arrangements without repetitions of the elements of an n-set is equal to n(n−1)...(n−k+1) = n! / (n - k)!.
+- The number of k-arrangements without repetitions of the elements of an n-set is equal to <u>n(n−1)...(n−k+1) = n! / (n - k)!</u>.
 
 - For example, let A = {a, b, c, d}. All 2-arrangements without repetitions of the elements of set A are the following: *ab, ac, ad, ba, bc, bd, ca, cb, cd, da, db, dc*.
 
   The total number of such arrangements is 4 * 3 = 12.
+
+### About formulas
+
+In the following formulas:
+
+- n is the number of elements of the set
+- r is the number of elements we choose
+- 0 <= r <= n
+
+### Permutations
+
+Permutations are arrangements of objects in which the <u>order of the objects matters</u>.
+
+####  Permutation with Repetitions
+
+- This refers to permutations in which an object can be used more than once.
+- $P(n,r) = n^r$
+- For example, if we have a set of two objects (A and B) and we want to generate all possible permutations with repetition, we would have the following possibilities: (A, A), (A, B), (B, A), and (B, B), the number of which is $2^2 = 4$.
+
+#### Permutation without Repetition
+
+- This refers to permutations in which each object can only be used once.
+- $P(n,r) = \frac{n!}{(n-r)!}$
+- For example, if we have a set of three objects (A, B, and C), there are $\frac{3!}{(3-3)!}$ possible permutations without repetition: (A, B, C), (A, C, B), (B, A, C), (B, C, A), (C, A, B), and (C, B, A).
+
+#### Permutation of Identical Objects
+
+- This refers to permutations in which all the objects are identical.
+- In general, the number of permutations of n objects with r of the objects identical objects is $\frac{n!}{r!}$.
+- For example, if we have a set of three identical objects A, there is only one possible permutation: (A, A, A).
+
+### Combinations
+
+Combinations are arrangements of objects in which the <u>order of the objects does not matter</u>.
+
+#### Combinations with Repetitions
+
+- This refers to combinations in which an object can be used more than once.
+- $C(n+r-1, r) = \binom{n+r-1}{r} = \binom{n+r-1}{n-1}$
+- For example, if we have a set of two objects (A and B) and we want to generate all possible combinations with repetition, we would have the following possibilities: (A), (B), (A, A), (A, B), (B, B), (A, A, A), (A, A, B), (A, B, B), and (B, B, B).
+
+#### Combinations without Repetition
+
+- This refers to combinations in which each object can only be used once.
+- The number of r-combinations of a set of size n is called binomial coefficient, denoted $C(n, r)$, and given by $C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$. It is pronounced "n choose r".
+- For example, if we have a set of three objects (A, B, and C) and we want to generate all possible combinations without repetition, we would have the following possibilities: (A), (B), (C), (A, B), (A, C), (B, C), and (A, B, C).
+
