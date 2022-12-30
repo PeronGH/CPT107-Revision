@@ -275,3 +275,51 @@ If there are more elements in the domain than in the range, then there must be a
 | ∃      | Existential quantifier | A quantifier that is used to indicate that a proposition holds for at least one value of a variable. For example, if x is a variable and p(x) is a proposition that depends on x, then the existential quantification "∃x, p(x)" is a proposition that is true if p(x) is true for at least one value of x. |
 | ⊨      | Semantic consequence   | A relationship between two statements or propositions, where one statement (the conclusion) logically follows from the other statement (the premise). For example, if the premise is "All dogs are mammals" and the conclusion is "Fido is a mammal", then the conclusion "Fido is a mammal" is a semantic consequence of the premise "All dogs are mammals". This can be symbolized as "All dogs are mammals ⊨ Fido is a mammal". |
 
+### Laws for equivalences
+
+- **Associative laws**:
+  - (p ∧ q) ∧ r ≡ p ∧ (q ∧ r)
+  - (p ∨ q) ∨ r ≡ p ∨ (q ∨ r)
+- **Commutative laws**:
+  - p ∧ q ≡ q ∧ p
+  - p ∨ q ≡ q ∨ p
+- **Identity laws**:
+  - p ∧ ⊤ ≡ p
+  - p ∨ ⊥ ≡ p
+- **Distributive laws**:
+  - p ∧ (q ∨ r) ≡ (p ∧ q) ∨ (p ∧ r)
+  - p ∨ (q ∧ r) ≡ (p ∨ q) ∧ (p ∨ r)
+- **Complement laws**:
+  - p ∧ ¬p ≡ ⊥
+  - p ∨ ¬p ≡ ⊤
+  - ¬¬p ≡ p
+  - ¬⊤ ≡ ⊥
+  - ¬⊥ ≡ ⊤
+- **De Morgan's laws**:
+  - ¬(p ∧ q) ≡ ¬p ∨ ¬q
+  - ¬(p ∨ q) ≡ ¬p ∧ ¬q
+
+### Predicate Logic
+
+First-order predicate logic is a formal system for representing and reasoning about the relationships between objects and predicates. It is a type of first-order logic, which means that it allows the use of quantifiers to range over variables that represent objects.
+
+#### Syntax
+
+The syntax of first-order predicate logic consists of a set of logical symbols and a set of well-formed formulas (wffs). The logical symbols include:
+
+- Predicate symbols: These represent properties or relations that hold between objects. For example, "x is taller than y" could be represented by the predicate symbol T(x, y).
+- Function symbols: These represent functions or operations that take one or more arguments and return a value. For example, "the mother of x" could be represented by the function symbol M(x).
+- Individual constants: These represent specific objects. For example, a could represent the object "Alice".
+- Individual variables: These represent objects that can be replaced with any individual constant. For example, x could represent any object.
+- Logical connectives: These include symbols such as "and" (∧), "or" (∨), "not" (¬), "implies" (→), and "if and only if" (↔).
+- Quantifiers: These include the symbols "for all" (∀) and "there exists" (∃).
+
+#### Semantics
+
+The semantics of first-order predicate logic specify the meaning of the logical symbols and how to determine the truth or falsity of a formula. The truth or falsity of a formula is determined by its truth value, which can be either true or false.
+
+The truth value of a formula is determined by the truth values of its **atomic formulas**, which are formulas that cannot be broken down into smaller formulas. Atomic formulas are either true or false based on their interpretation in a given domain. For example, the atomic formula T(a, b) is true if "a is taller than b" is true in the given domain, and false otherwise.
+
+#### Evaluation
+
+The process of determining the truth value of a formula is called evaluation. In first-order predicate logic, the rules for evaluating formulas are based on the truth table method, which specifies the truth value of a formula based on the truth values of its subformulas.
