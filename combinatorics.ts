@@ -1,4 +1,5 @@
 function factorial(n: number): number {
+    if (n < 0) throw new Error('factorial: n must be non-negative');
     return n > 0 ? n * factorial(n - 1) : 1;
 }
 
@@ -23,23 +24,35 @@ const Combinations = {
 console.log(`Type command: <mode> <n> <r>
 
 Modes:
-    pwr - Permutations with repetitions
-    pnr - Permutations without repetitions
-    cwr - Combinations with repetitions
-    cnr - Combinations without repetitions
-    !   - Factorial
-    q   - Quit
+    pr - Permutations with repetitions
+    pn - Permutations without repetitions
+    cr - Combinations with repetitions
+    cn - Combinations without repetitions
+     ! - Factorial
+     q - Quit
 `);
 // Command line interface
 const commands: { [mode: string]: (n: string, r: string) => void } = {
-    pwr: (n, r) =>
-        console.log(Permutations.withRepetitions(parseInt(n), parseInt(r))),
-    pnr: (n, r) =>
-        console.log(Permutations.withoutRepetitions(parseInt(n), parseInt(r))),
-    cwr: (n, r) =>
-        console.log(Combinations.withRepetitions(parseInt(n), parseInt(r))),
-    cnr: (n, r) =>
-        console.log(Combinations.withoutRepetitions(parseInt(n), parseInt(r))),
+    pr: (n, r) =>
+        console.log(
+            `${n}^${r} =`,
+            Permutations.withRepetitions(parseInt(n), parseInt(r))
+        ),
+    pn: (n, r) =>
+        console.log(
+            `${n}! / (${n} - ${r})! =`,
+            Permutations.withoutRepetitions(parseInt(n), parseInt(r))
+        ),
+    cr: (n, r) =>
+        console.log(
+            `(${n} + ${r} - 1)! / (${n} - 1)! / ${r}! =`,
+            Combinations.withRepetitions(parseInt(n), parseInt(r))
+        ),
+    cn: (n, r) =>
+        console.log(
+            `${n}! / (${n} - ${r})! / ${r}! =`,
+            Combinations.withoutRepetitions(parseInt(n), parseInt(r))
+        ),
     '!': n => console.log(factorial(parseInt(n))),
 };
 
@@ -48,7 +61,11 @@ while (true) {
     if (mode === 'q') {
         break;
     } else if (mode in commands) {
-        commands[mode](n, r);
+        try {
+            commands[mode](n, r);
+        } catch (error) {
+            console.log(error.message);
+        }
     } else {
         console.log('Invalid command');
     }
