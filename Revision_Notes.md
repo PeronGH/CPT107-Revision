@@ -227,7 +227,7 @@ Unary relations are just subsets of a set.
 
 #### Equivalence Relation
 
-- It is reflexive, symmetric and transitive.
+- It is <u>reflexive</u>, <u>symmetric</u> and <u>transitive</u>.
 
 
 - **Equivalence class**
@@ -236,7 +236,7 @@ Unary relations are just subsets of a set.
 
 #### Partial Order
 
-- It is reflexive, antisymmetric and transitive.
+- It is <u>reflexive</u>, <u>antisymmetric</u> and <u>transitive</u>.
 
 
 - A set S with a partial ordering R is called a **partially ordered set**, or **poset**, denoted by (S,R)
@@ -248,7 +248,7 @@ Unary relations are just subsets of a set.
 
 #### Total Order
 
-- It is <u>comparable</u> partial order.
+- It is <u>comparable</u> <u>partial order</u>.
 
 
 - **Comparable** means ∀x,y ∈ S, xRy ∨ yRx
@@ -459,7 +459,7 @@ In the following formulas:
 
 - n is the number of elements of the set
 - r is the number of elements we choose
-- 0 <= r <= n
+- 0 ≤ r ≤ n
 
 ### Permutations
 
@@ -503,3 +503,93 @@ Combinations are **selections** of objects in which the <u>order does not matter
 - For example, the number of binary strings of 17 zeros and 8 ones in which no two ones are adjacent is $\binom{18}{8}=43758$.
 
 ## Probability
+
+### Experiments
+
+- **Deterministic**: allow perfect prediction.
+- **Non-deterministic**: no perfect prediction.
+  - **Random**: exhibit statistical regularity in the long-run.
+  - **Haphazard**: unpredictable outcomes, no regularity.
+
+### Sample Space and Events
+
+#### Sample Space
+
+Sample space, denoted Ω, is the set of all possible outcomes of an experiment.
+
+#### Event
+
+Event is a subset of the sample space.
+
+##### Special Events
+
+- **Null event**, denoted ∅, never occurs.
+- **Entire event**, denoted Ω, always occurs.
+
+##### Compound Event
+
+Compound event is the combination of two or more <u>simple events</u>.
+
+- **Simple event** consists of exactly one outcome
+
+#### Operations on Events
+
+##### Complement
+
+- P(A’) = 1 - P(A)
+
+##### Union
+
+- P(A ∪ B) = P(A) + P(B) if A and B are <u>mutually exclusive events</u>.
+  - **Mutually exclusive events** are events that have no outcome in common.
+- P(A ∪ B) = P(A) + P(B) - P(A ∩ B) if A and B are <u>inclusive events</u>.
+  - **Inclusive events** are events that have one or more outcomes in common.
+
+##### Intersection
+
+- P(A ∩ B) = P(A) * P(B) if A and B are <u>independent events</u>.
+  - Events are **independent events** if the occurrence of one event does not affect the probability of the other (sample space is not changed). Otherwise, they are **dependent events**.
+
+### Definition
+
+**Probability** is a measure of the likelihood of an event occurring, and it is usually expressed as a decimal or fraction between 0 and 1. The probability of an event occurring is denoted by the symbol P, and it is calculated using the following formula:
+$$
+P(\text{event}) = \frac{\text{number of outcomes in the event}}{\text{total number of outcomes}}
+$$
+
+### Conditional Probability
+
+If the probability of “X” is conditional (affected by) “Y” (what happens before it) then the probability of “X” given ”Y” is
+$$
+P(X|Y) = \frac{P(X \cap Y)}{P(Y)}
+$$
+
+### Random Variable
+
+A random variable (r.v.) is a set of possible values from a random experiment.
+
+For example, when tossing a coin, we could get Heads or Tails. Let's give them the values Heads=0 and Tails=1 and we have a Random Variable X = {0, 1}.
+
+### Expected Value
+
+#### Definition
+
+The expected value of a discrete random variable is equal to the mean of the random variable.
+$$
+E(X) = \sum_{x \in \Omega} f(x)P(x)
+$$
+
+- $f(x)$ is the value of the random variable at a particular point $x$ in the sample space $\Omega$.
+- $P(x)$ is the probability of the random variable taking on the value $x$.
+
+For example, consider a random variable $X$ that represents the outcome of a dice roll. The sample space for this variable is $\Omega = \{1, 2, 3, 4, 5, 6\}$, and the probability of each outcome is $P(x) = \frac{1}{6}$ for all $x \in \Omega$. If we want to calculate the expected value of $X$, we can use the formula above:
+$$
+E(X) = \sum_{x \in \Omega} f(x)P(x) = \sum_{x \in \Omega} x \cdot \frac{1}{6} = \frac{1}{6}(1 + 2 + 3 + 4 + 5 + 6) = \frac{21}{6} = 3.5
+$$
+
+#### Linearity of Expectation
+
+Consider two random variables $X$ and $Y$, with expected values $E(X)$ and $E(Y)$, respectively. If we want to calculate the expected value of a new random variable $Z = aX + bY$, where $a$ and $b$ are constants, we can use the linearity of expectation to simplify the calculation:
+$$
+E(aX + bY) = aE(X) + bE(Y)
+$$
