@@ -4,6 +4,8 @@
 
 [Revision Notes](/Revision_Notes.md)
 
+[2019-2020 Final Exam](/2019-2020_CSE107_Final_S1.pdf)
+
 ## Tips
 
 Typora is recommended to preview the markdown file.
