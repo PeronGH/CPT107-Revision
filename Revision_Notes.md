@@ -58,7 +58,7 @@ If (¬p → false) is true, then p is true.
 
 Assume ¬p and find contradiction.
 
-### Proof by induction
+### Proof by Induction
 
 #### Definition
 
@@ -335,7 +335,7 @@ If there are more elements in the domain than in the range, then there must be a
 | ∃      | Existential quantifier | A quantifier that is used to indicate that a proposition holds for at least one value of a variable. For example, if x is a variable and p(x) is a proposition that depends on x, then the existential quantification "∃x, p(x)" is a proposition that is true if p(x) is true for at least one value of x. |
 | ⊨      | Semantic consequence   | A relationship between two statements or propositions, where one statement (the conclusion) logically follows from the other statement (the premise). For example, if the premise is "All dogs are mammals" and the conclusion is "Fido is a mammal", then the conclusion "Fido is a mammal" is a semantic consequence of the premise "All dogs are mammals". This can be symbolized as "All dogs are mammals ⊨ Fido is a mammal". |
 
-### Laws for equivalences
+### Laws for Equivalences
 
 #### Associative Laws
 
@@ -530,22 +530,22 @@ Event is a subset of the sample space.
 
 Compound event is the combination of two or more <u>simple events</u>.
 
-- **Simple event** consists of exactly one outcome
+- **Simple event** consists of exactly one outcome.
 
 #### Operations on Events
 
-##### Complement
+##### Complement (not)
 
 - P(A’) = 1 - P(A)
 
-##### Union
+##### Union (or)
 
 - P(A ∪ B) = P(A) + P(B) if A and B are <u>mutually exclusive events</u>.
   - **Mutually exclusive events** are events that have no outcome in common.
 - P(A ∪ B) = P(A) + P(B) - P(A ∩ B) if A and B are <u>inclusive events</u>.
   - **Inclusive events** are events that have one or more outcomes in common.
 
-##### Intersection
+##### Intersection (and)
 
 - P(A ∩ B) = P(A) * P(B) if A and B are <u>independent events</u>.
   - Events are **independent events** if the occurrence of one event does not affect the probability of the other (sample space is not changed). Otherwise, they are **dependent events**.
