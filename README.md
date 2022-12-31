@@ -2,7 +2,7 @@
 
 ## Links
 
-[Revision Notes](Revision_Notes.md)
+[Revision Notes](Revision_Notes.pdf)
 
 [2019-2020 Final Exam](2019-2020_CSE107_Final_S1.pdf)
 
