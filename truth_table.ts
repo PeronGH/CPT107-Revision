@@ -63,4 +63,17 @@ function generateTruthTable(expressions: string[]) {
     iterate(Array.from(variables));
 }
 
-generateTruthTable(['p', 'q', '(p && !q) || q']);
+// Command line interface
+console.log(`Type expressions, separated by , or ;, or press enter to quit:\n`);
+
+while (true) {
+    const expressions = prompt('>')
+        ?.split(/[;,]/)
+        .map(expression => expression.trim());
+
+    if (expressions === undefined) break;
+
+    console.log();
+    generateTruthTable(expressions);
+    console.log();
+}

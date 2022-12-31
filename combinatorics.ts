@@ -21,6 +21,8 @@ const Combinations = {
     },
 };
 
+// Command line interface
+
 console.log(`Type command: <mode> <n> <r>
 
 Modes:
@@ -31,7 +33,7 @@ Modes:
      ! - Factorial
      q - Quit
 `);
-// Command line interface
+
 const commands: { [mode: string]: (n: string, r: string) => void } = {
     pr: (n, r) =>
         console.log(
