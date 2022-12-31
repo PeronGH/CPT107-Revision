@@ -1,6 +1,6 @@
 # CPT107 Revision
 
-## Number Systems
+## Number Systems 
 
 ### Brief Description
 
@@ -46,7 +46,7 @@ Here is a table that lists the various sets of numbers and whether they are clos
 | Even numbers     | Yes      | Yes         | Yes            | No       |
 | Odd numbers      | No       | No          | Yes            | No       |
 
-## Proof Techniques
+## Proof Techniques 
 
 ### Proof by Contradiction
 
@@ -66,11 +66,17 @@ Let P(n) be a predicate. If P(0) ∧ (∀n ∈ N, P(n) → P(n+1)) is true, then
 
 #### Steps
 
-Base case ...
+Base case: When n = 0, ...
 
-Induction step ...
+Induction step: Let k ∈ N be given and suppose ... is true for n = k.
 
-## Set Theory
+...
+
+Thus, ... holds for 𝑛 = 𝑘 + 1, and the proof of the induction step is complete.
+
+Conclusion: By the principle of induction, ... is true for all n ∈ N.
+
+## Set Theory 
 
 ### Notation
 
@@ -153,7 +159,7 @@ A sequence of bits (binary digits), which can be either 0 or 1.
 
 A characteristic vector is a way of representing a subset of a larger set using bit string. The length of the characteristic vector is equal to the number of elements in the larger set, and each element is represented by a single bit. If the bit corresponding to an element is 1, it means that the element is in the subset; if the bit is 0, it means that the element is not in the subset.
 
-## Relations
+## Relations 
 
 ### Definition
 
@@ -263,7 +269,7 @@ Unary relations are just subsets of a set.
 
   S ◦ R = {(a,c) | (∃b ∈ B)( aRb ∧ bSc )}.
 
-## Functions
+## Functions 
 
 ### Definition
 
@@ -282,12 +288,12 @@ Suppose *f*: A -> B.
 
 ### Properties
 
-#### Injective (or "one-to-one")
+#### Injective (one-to-one)
 
 - A function f: X -> Y is injective if for all x<sub>1</sub>, x<sub>2</sub> in X, f(x<sub>1</sub>) = f(x<sub>2</sub>) implies x<sub>1</sub> = x<sub>2</sub>. 
 - This means that the function maps different elements of the domain to different elements of the codomain.
 
-#### Surjective (or "onto")
+#### Surjective (onto)
 
 - A function f: X -> Y is surjective if for all y in Y, there exists an x in X such that f(x) = y. 
 - This means that the function maps every element of the codomain to some element in the domain.
@@ -318,7 +324,7 @@ Then *(g o f)(x) = g(f(x)).*
 
 If there are more elements in the domain than in the range, then there must be at least one element in the domain that is related to more than one element in the range. Thus, the function is not one-to-one.
 
-## Propositional Logic and FOL
+## Propositional Logic and FOL 
 
 ### Notations
 
@@ -395,7 +401,7 @@ The truth value of a formula is determined by the truth values of its **atomic f
 
 The process of determining the truth value of a formula is called evaluation. In first-order predicate logic, the rules for evaluating formulas are based on the truth table method, which specifies the truth value of a formula based on the truth values of its subformulas.
 
-## Combinatorics
+## Combinatorics 
 
 ### Notations
 
@@ -428,26 +434,26 @@ The process of determining the truth value of a formula is called evaluation. In
 
 ### Basic Counting Rules
 
-#### Product Rule (Multiplication Principle)
+#### Product Rule
 
 - If there are m ways to perform one task and n ways to perform a second task, then there are $m \times n$ ways to perform both tasks.
 - This principle is used when two events are independent, meaning that the outcome of one event does not affect the outcome of the other event.
 - For example, if there are 2 ways to choose a shirt (red or blue) and 3 ways to choose a pair of pants (jeans, slacks, or shorts), then there are 2 * 3 = 6 ways to choose a complete outfit.
 - Explanation with set theory: |A × B| = |A| * |B|
 
-#### Sum Rule (Addition Principle)
+#### Sum Rule
 
 - If there are m ways to perform one task and n ways to perform a second task, then there are $m + n$ ways to perform either task.
 - This principle is used when two events are mutually exclusive, meaning that the outcome of one event precludes the possibility of the other event occurring.
 - For example, Friday night you can see one of five movies, go to one of two concerts, or stay home. There are 5 + 2 + 1 = 8 choices for spending Friday night.
 - Explanation with set theory: |A U B| = |A| + |B| when A ∩ B = ∅
 
-#### Subtraction Rule (Subtraction Principle)
+#### Subtraction Rule
 
 - If there are m ways to perform a task and n of those ways are not allowed, then there are $m - n$ ways to perform the task.
 - This principle is used when there are restrictions on the ways in which a task can be performed.
 
-#### Division Rule (Division Principle)
+#### Division Rule
 
 - If a task can be performed in m ways and each of those ways can be divided into n sub-tasks, then there are $\frac{m}{n}$ ways to perform each sub-task.
 - This principle is used when a task can be divided into smaller sub-tasks that can be performed independently.
@@ -502,7 +508,7 @@ Combinations are **selections** of objects in which the <u>order does not matter
 - The number of r-combinations of a set of size n is called **binomial coefficient**, denoted $C(n, r)$, pronounced "n choose r", and given by $C(n, r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}$.
 - For example, the number of binary strings of 17 zeros and 8 ones in which no two ones are adjacent is $\binom{18}{8}=43758$.
 
-## Probability
+## Probability 
 
 ### Experiments
 
