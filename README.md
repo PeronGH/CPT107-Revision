@@ -9,3 +9,5 @@
 ## Tips
 
 Typora is recommended to preview the markdown file.
+
+Use `deno run <path_to_script>` to run helper scripts.
