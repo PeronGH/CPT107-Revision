@@ -159,6 +159,13 @@ A sequence of bits (binary digits), which can be either 0 or 1.
 
 A characteristic vector is a way of representing a subset of a larger set using bit string. The length of the characteristic vector is equal to the number of elements in the larger set, and each element is represented by a single bit. If the bit corresponding to an element is 1, it means that the element is in the subset; if the bit is 0, it means that the element is not in the subset.
 
+For example, Let S = {1, 2, 3, 4, 5}, A = {1, 3, 5} and B = {3, 4}.
+
+- The characteristic vector of A is (1, 0, 1, 0, 1).
+- The characteristic vector of B is (0, 0, 1, 1, 0).
+- The characteristic vector of A ∩ B is (0, 0, 1, 0, 0).
+- The characteristic vector of A ∪ B is (1, 0, 1, 1, 1).
+
 ## Relations 
 
 ### Definition
