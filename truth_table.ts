@@ -63,4 +63,4 @@ function generateTruthTable(expressions: string[]) {
     iterate(Array.from(variables));
 }
 
-generateTruthTable(['p', 'q', '(p && q) || !q']);
+generateTruthTable(['p', 'q', '(p && !q) || q']);

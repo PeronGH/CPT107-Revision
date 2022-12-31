@@ -184,7 +184,7 @@ Unary relations are just subsets of a set.
 
 <u>(a, b) ∈ R</u> can be denoted as aRb, which is a predicate that a is R-related to b.
 
-#### Directed Graphs
+#### Directed Graphs (digraph)
 
 - Let A and B be two finite sets and R a binary relation between these two sets (i.e., R ⊆ A × B).
 - We represent the elements of these two sets as vertices of a graph.
@@ -225,7 +225,7 @@ Unary relations are just subsets of a set.
 #### Antisymmetric
 
 - ∀x,y ∈ A, (xRy ∧ yRx) → x = y
-- To check for antisymmetry, you can verify that for every pair of elements A and B that are related, if (A, B) and (B, A) are both in the relation, then A and B must be the same element.
+- To check for antisymmetry, you can verify that for every pair of elements A and B that are related, if (A, B) and (B, A) are both in the relation, then A and B can't be different elements.
 
 #### Transitive
 
