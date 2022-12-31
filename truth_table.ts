@@ -7,7 +7,18 @@ function generateTruthTable(expressions: string[]) {
 
     // Next, we'll parse the expressions to extract the variables and create
     // the header row of the table.
-    console.log('| ' + expressions.join(' | ') + ' |');
+    console.log(
+        '| ' +
+            expressions
+                .map(expression =>
+                    expression
+                        .replaceAll('||', '∨')
+                        .replaceAll('&&', '∧')
+                        .replaceAll('!', '¬')
+                )
+                .join(' | ') +
+            ' |'
+    );
     console.log('|-' + '-|-'.repeat(expressions.length - 1) + '-|');
     expressions.forEach(expression => {
         // Use a regular expression to match all the variables in the expression.
@@ -52,4 +63,4 @@ function generateTruthTable(expressions: string[]) {
     iterate(Array.from(variables));
 }
 
-generateTruthTable(['a', 'b', 'a && b']);
+generateTruthTable(['p', 'q', '(p && q) || !q']);
