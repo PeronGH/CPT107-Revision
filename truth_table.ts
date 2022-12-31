@@ -74,6 +74,10 @@ while (true) {
     if (expressions === undefined) break;
 
     console.log();
-    generateTruthTable(expressions);
+    try {
+        generateTruthTable(expressions);
+    } catch {
+        console.log('Invalid expression');
+    }
     console.log();
 }
