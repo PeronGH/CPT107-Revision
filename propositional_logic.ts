@@ -55,9 +55,8 @@ const Tokens = {
     },
 };
 
-// parse multiple kinds of propositional logic expressions into reverse polish notation
+// parse propositional logic expression into reverse polish notation
 function parsePropositionalLogicRPN(expression: string): string[] {
-    // parse expression into reverse polish notation
     const stack: string[] = [];
     const output: string[] = [];
 
@@ -93,6 +92,7 @@ function parsePropositionalLogicRPN(expression: string): string[] {
     return output;
 }
 
+// evaluate propositional logic expression in reverse polish notation
 function evaluatePropositionalLogicRPN(
     rpn: string[],
     values: Map<string, boolean>
@@ -101,11 +101,14 @@ function evaluatePropositionalLogicRPN(
 
     for (const token of rpn) {
         if (Tokens.isOperand(token)) {
+            // handle operands
             stack.push(values.get(token)!);
         } else if (Tokens.isOperator(token)) {
-            if (token === '¬') {
+            if (['¬'].includes(token)) {
+                // handle unary operators
                 stack.push(!stack.pop()!);
             } else {
+                // handle binary operators
                 const rhs = stack.pop()!;
                 const lhs = stack.pop()!;
 
