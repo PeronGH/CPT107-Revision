@@ -12,8 +12,8 @@ export function preprocessExpression(expression: string) {
         .replaceAll(/equal|=|↔|<->/gi, '≡')
         .replaceAll(/and|&/gi, '∧')
         .replaceAll(/or|\|/gi, '∨')
-        .replaceAll(/not|!|~|-/gi, '¬')
         .replaceAll(/imply|->/gi, '→')
+        .replaceAll(/not|!|~|-/gi, '¬')
         .replaceAll(/\s/gi, '');
 }
 
