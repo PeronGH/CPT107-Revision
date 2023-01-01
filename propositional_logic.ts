@@ -9,10 +9,10 @@ export function evaluate(expression: string, values: Map<string, boolean>) {
 
 export function preprocessExpression(expression: string) {
     return expression
-        .replaceAll(/equal|=|↔|<->/gi, '≡')
+        .replaceAll(/equal|equiv|=|↔|<->/gi, '≡')
         .replaceAll(/and|&/gi, '∧')
         .replaceAll(/or|\|/gi, '∨')
-        .replaceAll(/imply|->/gi, '→')
+        .replaceAll(/imply|implies|->/gi, '→')
         .replaceAll(/not|!|~|-/gi, '¬')
         .replaceAll(/\s/gi, '');
 }
