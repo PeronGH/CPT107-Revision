@@ -43,16 +43,22 @@ function parsePropositionalLogicRPN(expression: string): string[] {
     const stack: string[] = [];
     const output: string[] = [];
 
+    // tokenize expression
     for (const char of expression) {
         if (Tokens.isOperand(char)) {
+            // handle operands
             output.push(char);
         } else if (Tokens.isOperator(char)) {
+            // handle operators
             while (
                 stack.length > 0 &&
                 Tokens.isOperator(stack[stack.length - 1]) &&
                 Tokens.getPrecedence(char) <=
                     Tokens.getPrecedence(stack[stack.length - 1])
             ) {
+                // while the precedence of the operator on the top of the stack is
+                // greater than or equal to the precedence of the current operator,
+                // pop the operator from the stack and add it to the output.
                 output.push(stack.pop()!);
             }
             stack.push(char);
@@ -123,6 +129,8 @@ function evaluatePropositionalLogicRPN(
 
     return stack.pop()!;
 }
+
+// tests
 
 Deno.test('parse RPN', () => {
     assertEquals(parsePropositionalLogicRPN(preprocessExpression('p and q')), [
