@@ -103,35 +103,28 @@ function evaluatePropositionalLogicRPN(
         if (Tokens.isOperand(token)) {
             stack.push(values.get(token)!);
         } else if (Tokens.isOperator(token)) {
-            switch (token) {
-                case '¬':
-                    stack.push(!stack.pop()!);
-                    break;
-                case '∧':
-                    {
-                        const a = stack.pop()!;
-                        const b = stack.pop()!;
-                        stack.push(a && b);
-                    }
-                    break;
-                case '∨':
-                    {
-                        const a = stack.pop()!;
-                        const b = stack.pop()!;
-                        stack.push(a || b);
-                    }
-                    break;
+            if (token === '¬') {
+                stack.push(!stack.pop()!);
+            } else {
+                const rhs = stack.pop()!;
+                const lhs = stack.pop()!;
 
-                case '→':
-                    {
-                        const a = stack.pop()!;
-                        const b = stack.pop()!;
-                        stack.push(!b || a);
-                    }
-                    break;
-                case '≡':
-                    stack.push(stack.pop()! === stack.pop()!);
-                    break;
+                switch (token) {
+                    case '∧':
+                        stack.push(lhs && rhs);
+                        break;
+                    case '∨':
+                        stack.push(lhs || rhs);
+                        break;
+                    case '→':
+                        stack.push(!lhs || rhs);
+                        break;
+                    case '≡':
+                        stack.push(lhs === rhs);
+                        break;
+                    default:
+                        throw new Error(`Invalid token: ${token}`);
+                }
             }
         } else {
             throw new Error(`Invalid token: ${token}`);
