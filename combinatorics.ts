@@ -1,3 +1,5 @@
+import { Input } from 'https://deno.land/x/cliffy@v0.25.6/mod.ts';
+
 function factorial(n: number): number {
     if (n < 0) throw new Error('factorial: n must be non-negative');
     return n > 0 ? n * factorial(n - 1) : 1;
@@ -58,17 +60,17 @@ const commands: { [mode: string]: (n: string, r: string) => void } = {
     '!': n => console.log(factorial(parseInt(n))),
 };
 
-while (true) {
-    const [mode, n, r] = prompt('>')!.split(/\s+/);
-    if (mode === 'q') {
-        break;
-    } else if (mode in commands) {
-        try {
-            commands[mode](n, r);
-        } catch (error) {
-            console.log(error.message);
-        }
-    } else {
-        console.log('Invalid command');
+let line = '';
+
+while (
+    (line = await Input.prompt({
+        message: '',
+        suggestions: Object.keys(commands),
+        prefix: '',
+    })) !== 'q'
+) {
+    const [mode, n, r] = line.split(' ');
+    if (mode in commands) {
+        commands[mode](n, r);
     }
 }
