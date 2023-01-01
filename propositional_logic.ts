@@ -8,23 +8,13 @@ export function evaluate(expression: string, values: Map<string, boolean>) {
 }
 
 export function preprocessExpression(expression: string) {
-    expression = expression
+    return expression
         .replaceAll(/equal|=|↔|<->/gi, '≡')
         .replaceAll(/and|&/gi, '∧')
         .replaceAll(/or|\|/gi, '∨')
         .replaceAll(/not|!|~|-/gi, '¬')
         .replaceAll(/imply|->/gi, '→')
         .replaceAll(/\s/gi, '');
-
-    // replace 𝑎 to 𝑧 with a to z
-    for (let i = 0; i < 26; i++) {
-        expression = expression.replaceAll(
-            String.fromCharCode(55349 + i),
-            String.fromCharCode(97 + i)
-        );
-    }
-
-    return expression;
 }
 
 const Tokens = {
