@@ -1,4 +1,4 @@
-import { Input } from 'https://deno.land/x/cliffy@v0.25.6/mod.ts';
+import { Input, colors } from 'https://deno.land/x/cliffy@v0.25.6/mod.ts';
 
 function factorial(n: number): number {
     if (n < 0) throw new Error('factorial: n must be non-negative');
@@ -36,28 +36,20 @@ Modes:
      q - Quit
 `);
 
-const commands: { [mode: string]: (n: string, r: string) => void } = {
+const commands: { [mode: string]: (n: string, r: string) => string } = {
     pr: (n, r) =>
-        console.log(
-            `${n}^${r} =`,
-            Permutations.withRepetitions(parseInt(n), parseInt(r))
-        ),
+        `${n}^${r} = ` + Permutations.withRepetitions(parseInt(n), parseInt(r)),
     pn: (n, r) =>
-        console.log(
-            `${n}! / (${n} - ${r})! =`,
-            Permutations.withoutRepetitions(parseInt(n), parseInt(r))
-        ),
+        `${n}! / (${n} - ${r})! = ` +
+        Permutations.withoutRepetitions(parseInt(n), parseInt(r)),
     cr: (n, r) =>
-        console.log(
-            `(${n} + ${r} - 1)! / (${n} - 1)! / ${r}! =`,
-            Combinations.withRepetitions(parseInt(n), parseInt(r))
-        ),
+        `(${n} + ${r} - 1)! / (${n} - 1)! / ${r}! = ` +
+        Combinations.withRepetitions(parseInt(n), parseInt(r)),
     cn: (n, r) =>
-        console.log(
-            `${n}! / (${n} - ${r})! / ${r}! =`,
-            Combinations.withoutRepetitions(parseInt(n), parseInt(r))
-        ),
-    '!': n => console.log(factorial(parseInt(n))),
+        `${n}! / (${n} - ${r})! / ${r}! = ` +
+        Combinations.withoutRepetitions(parseInt(n), parseInt(r)),
+
+    '!': n => factorial(parseInt(n)).toString(),
 };
 
 let line = '';
@@ -71,6 +63,6 @@ while (
 ) {
     const [mode, n, r] = line.split(' ');
     if (mode in commands) {
-        commands[mode](n, r);
+        console.log('  ' + colors.bold(commands[mode](n, r)));
     }
 }
