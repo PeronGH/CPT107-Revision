@@ -18,6 +18,7 @@ export function preprocessExpression(expression: string) {
         .replaceAll('~', '¬')
         .replaceAll('&', '∧')
         .replaceAll('|', '∨')
+        .replaceAll('<->', '≡')
         .replaceAll('->', '→')
         .replaceAll('=', '≡')
         .replaceAll('↔', '≡')
