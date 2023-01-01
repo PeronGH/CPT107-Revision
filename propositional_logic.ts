@@ -20,22 +20,14 @@ export function preprocessExpression(expression: string) {
 const Tokens = {
     isOperator: (token: string) => ['¬', '∧', '∨', '→', '≡'].includes(token),
     isOperand: (token: string) => /[a-z]/i.test(token),
-    getPrecedence(token: string) {
-        switch (token) {
-            case '¬':
-                return 3;
-            case '∧':
-                return 2;
-            case '∨':
-                return 2;
-            case '→':
-                return 1;
-            case '≡':
-                return 0;
-            default:
-                throw new Error(`Invalid token: ${token}`);
-        }
-    },
+    getPrecedence: (token: string) => Tokens.precedences.get(token)!,
+    precedences: new Map([
+        ['¬', 3],
+        ['∧', 2],
+        ['∨', 2],
+        ['→', 1],
+        ['≡', 0],
+    ]),
 };
 
 // parse propositional logic expression into reverse polish notation
