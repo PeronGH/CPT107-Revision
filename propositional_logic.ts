@@ -7,8 +7,8 @@ export function evaluate(expression: string, values: Map<string, boolean>) {
     );
 }
 
-export const preprocessExpression = (expression: string) =>
-    expression
+export function preprocessExpression(expression: string) {
+    expression = expression
         .replaceAll('and', '∧')
         .replaceAll('or', '∨')
         .replaceAll('not', '¬')
@@ -22,6 +22,17 @@ export const preprocessExpression = (expression: string) =>
         .replaceAll('=', '≡')
         .replaceAll('↔', '≡')
         .replaceAll(/\s/g, '');
+
+    // replace 𝑎 to 𝑧 with a to z
+    for (let i = 0; i < 26; i++) {
+        expression = expression.replaceAll(
+            String.fromCharCode(55349 + i),
+            String.fromCharCode(97 + i)
+        );
+    }
+
+    return expression;
+}
 
 const Tokens = {
     isOperator: (token: string) => ['¬', '∧', '∨', '→', '≡'].includes(token),

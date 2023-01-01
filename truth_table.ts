@@ -60,7 +60,9 @@ function generateTruthTable(expressions: string[]): string[][] {
 }
 
 // Command line interface
-console.log(`Type expressions, separated by , or ;, or press enter to quit:\n`);
+console.log(`
+Type expressions, separated by , or ;, or press enter to quit:
+`);
 
 let line: string | null = null;
 
