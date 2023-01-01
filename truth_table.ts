@@ -9,6 +9,28 @@ function generateTruthTable(expressions: string[]): string[][] {
         expressions[index] = preprocessExpression(expression);
     });
 
+    const variables = new Set<string>();
+    const values = new Map<string, boolean>();
+
+    // initialize variables
+    for (const expression of expressions) {
+        for (const char of expression) {
+            if (/[a-z]/i.test(char)) {
+                variables.add(char);
+            }
+        }
+    }
+
+    const variableArray = [...variables].sort((a, b) => -a.localeCompare(b));
+
+    // add variable to expressions if it is not present
+    for (const variable of variableArray) {
+        if (!expressions.includes(variable)) {
+            // insert the variable at the beginning of the expression
+            expressions = [variable, ...expressions];
+        }
+    }
+
     // generate truth table header
     result.push(
         expressions.map(expression =>
@@ -20,19 +42,7 @@ function generateTruthTable(expressions: string[]): string[][] {
         )
     );
 
-    const variables = new Set<string>();
-    const values = new Map<string, boolean>();
-
-    for (const expression of expressions) {
-        // initialize variables
-        for (const char of expression) {
-            if (/[a-z]/i.test(char)) {
-                variables.add(char);
-            }
-        }
-    }
-
-    const variableArray = Array.from(variables).sort();
+    // generate truth table body
 
     for (let i = 0; i < 2 ** variableArray.length; i++) {
         for (let j = 0; j < variableArray.length; j++) {
