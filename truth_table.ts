@@ -1,4 +1,8 @@
-function generateTruthTable(expressions: string[]) {
+import { Table, Input } from 'https://deno.land/x/cliffy@v0.25.6/mod.ts';
+
+function generateTruthTable(expressions: string[]): string[][] {
+    const result: string[][] = [];
+
     // First, we need to determine the number of variables in the expressions.
     // We'll use a Set to store the unique variables, and a Map to store
     // the truth values for each variable at each row of the table.
@@ -7,19 +11,14 @@ function generateTruthTable(expressions: string[]) {
 
     // Next, we'll parse the expressions to extract the variables and create
     // the header row of the table.
-    console.log(
-        '| ' +
-            expressions
-                .map(expression =>
-                    expression
-                        .replaceAll('||', '∨')
-                        .replaceAll('&&', '∧')
-                        .replaceAll('!', '¬')
-                )
-                .join(' | ') +
-            ' |'
+    result.push(
+        expressions.map(expression =>
+            expression
+                .replaceAll('||', '∨')
+                .replaceAll('&&', '∧')
+                .replaceAll('!', '¬')
+        )
     );
-    console.log('|-' + '-|-'.repeat(expressions.length - 1) + '-|');
     expressions.forEach(expression => {
         // Use a regular expression to match all the variables in the expression.
         const matches = expression.match(/[a-z]/gi);
@@ -49,7 +48,7 @@ function generateTruthTable(expressions: string[]) {
                 // vulnerable to injection attacks.
                 return eval(evaluated);
             });
-            console.log('| ' + row.join(' | ') + ' |');
+            result.push(row);
         } else {
             // Set the first variable to true and iterate through the rest.
             variableValues.set(remainingVariables[0], true);
@@ -61,21 +60,20 @@ function generateTruthTable(expressions: string[]) {
         }
     }
     iterate(Array.from(variables));
+
+    return result;
 }
 
 // Command line interface
 console.log(`Type expressions, separated by , or ;, or press enter to quit:\n`);
 
-while (true) {
-    const expressions = prompt('>')
-        ?.split(/[;,]/)
-        .map(expression => expression.trim());
+let line: string | null = null;
 
-    if (expressions === undefined) break;
+while ((line = prompt('>')) !== null) {
+    const expressions = line.split(/[;,]/).map(expression => expression.trim());
 
-    console.log();
     try {
-        generateTruthTable(expressions);
+        new Table(...generateTruthTable(expressions)).border(true).render();
     } catch {
         console.log('Invalid expression');
     }
