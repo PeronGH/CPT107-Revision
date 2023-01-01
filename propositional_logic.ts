@@ -13,18 +13,18 @@ export const preprocessExpression = (expression: string) =>
         .replaceAll('or', '∨')
         .replaceAll('not', '¬')
         .replaceAll('imply', '→')
-        .replaceAll('equal', '↔')
+        .replaceAll('equal', '≡')
         .replaceAll('!', '¬')
         .replaceAll('~', '¬')
         .replaceAll('&', '∧')
         .replaceAll('|', '∨')
         .replaceAll('->', '→')
-        .replaceAll('=', '↔')
-        .replaceAll('≡', '↔')
+        .replaceAll('=', '≡')
+        .replaceAll('↔', '≡')
         .replaceAll(/\s/g, '');
 
 const Tokens = {
-    isOperator: (token: string) => ['¬', '∧', '∨', '→', '↔'].includes(token),
+    isOperator: (token: string) => ['¬', '∧', '∨', '→', '≡'].includes(token),
     isOperand: (token: string) => /[a-z]/i.test(token),
     getPrecedence(token: string) {
         switch (token) {
@@ -36,7 +36,7 @@ const Tokens = {
                 return 2;
             case '→':
                 return 1;
-            case '↔':
+            case '≡':
                 return 0;
             default:
                 throw new Error(`Invalid token: ${token}`);
@@ -105,7 +105,7 @@ function evaluatePropositionalLogicRPN(
                 case '→':
                     stack.push(stack.pop()! || !stack.pop()!);
                     break;
-                case '↔':
+                case '≡':
                     stack.push(stack.pop()! === stack.pop()!);
                     break;
                 default:
@@ -130,7 +130,7 @@ Deno.test('parse RPN', () => {
         '∨',
     ]);
     assertEquals(parsePropositionalLogicRPN('p -> q'), ['p', 'q', '→']);
-    assertEquals(parsePropositionalLogicRPN('p = !q'), ['p', 'q', '¬', '↔']);
+    assertEquals(parsePropositionalLogicRPN('p = !q'), ['p', 'q', '¬', '≡']);
 });
 
 Deno.test('evaluate RPN', () => {
@@ -156,7 +156,7 @@ Deno.test('evaluate RPN', () => {
     );
     assertEquals(
         evaluatePropositionalLogicRPN(
-            ['p', 'q', '¬', '↔'],
+            ['p', 'q', '¬', '≡'],
             new Map([
                 ['p', true],
                 ['q', false],

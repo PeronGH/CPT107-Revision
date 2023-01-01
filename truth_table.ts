@@ -16,7 +16,7 @@ function generateTruthTable(expressions: string[]): string[][] {
                 .replaceAll('∧', ' ∧ ')
                 .replaceAll('∨', ' ∨ ')
                 .replaceAll('→', ' → ')
-                .replaceAll('↔', ' ↔ ')
+                .replaceAll('≡', ' ≡ ')
         )
     );
 
