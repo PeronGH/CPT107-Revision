@@ -108,7 +108,11 @@ function evaluatePropositionalLogicRPN(
                     stack.push(!stack.pop()!);
                     break;
                 case '∧':
-                    stack.push(stack.pop()! && stack.pop()!);
+                    {
+                        const a = stack.pop()!;
+                        const b = stack.pop()!;
+                        stack.push(a && b);
+                    }
                     break;
                 case '∨':
                     {
@@ -133,6 +137,11 @@ function evaluatePropositionalLogicRPN(
             throw new Error(`Invalid token: ${token}`);
         }
     }
+
+    if (stack.length !== 1) {
+        throw new Error('Invalid RPN');
+    }
+
     return stack.pop()!;
 }
 
