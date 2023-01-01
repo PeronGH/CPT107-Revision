@@ -120,17 +120,26 @@ function evaluatePropositionalLogicRPN(
 }
 
 Deno.test('parse RPN', () => {
-    assertEquals(parsePropositionalLogicRPN('p and q'), ['p', 'q', '∧']);
-    assertEquals(parsePropositionalLogicRPN('!p | (p & q)'), [
-        'p',
-        '¬',
+    assertEquals(parsePropositionalLogicRPN(preprocessExpression('p and q')), [
         'p',
         'q',
         '∧',
-        '∨',
     ]);
-    assertEquals(parsePropositionalLogicRPN('p -> q'), ['p', 'q', '→']);
-    assertEquals(parsePropositionalLogicRPN('p = !q'), ['p', 'q', '¬', '≡']);
+    assertEquals(
+        parsePropositionalLogicRPN(preprocessExpression('!p | (p & q)')),
+        ['p', '¬', 'p', 'q', '∧', '∨']
+    );
+    assertEquals(parsePropositionalLogicRPN(preprocessExpression('p -> q')), [
+        'p',
+        'q',
+        '→',
+    ]);
+    assertEquals(parsePropositionalLogicRPN(preprocessExpression('p = !q')), [
+        'p',
+        'q',
+        '¬',
+        '≡',
+    ]);
 });
 
 Deno.test('evaluate RPN', () => {
