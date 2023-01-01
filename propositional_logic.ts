@@ -100,10 +100,19 @@ function evaluatePropositionalLogicRPN(
                     stack.push(stack.pop()! && stack.pop()!);
                     break;
                 case '∨':
-                    stack.push(stack.pop()! || stack.pop()!);
+                    {
+                        const a = stack.pop()!;
+                        const b = stack.pop()!;
+                        stack.push(a || b);
+                    }
                     break;
+
                 case '→':
-                    stack.push(stack.pop()! || !stack.pop()!);
+                    {
+                        const a = stack.pop()!;
+                        const b = stack.pop()!;
+                        stack.push(!b || a);
+                    }
                     break;
                 case '≡':
                     stack.push(stack.pop()! === stack.pop()!);
@@ -115,7 +124,6 @@ function evaluatePropositionalLogicRPN(
             throw new Error(`Invalid token: ${token}`);
         }
     }
-
     return stack.pop()!;
 }
 
@@ -140,6 +148,10 @@ Deno.test('parse RPN', () => {
         '¬',
         '≡',
     ]);
+    assertEquals(
+        parsePropositionalLogicRPN(preprocessExpression('!p | q = p -> q')),
+        ['p', '¬', 'q', '∨', 'p', 'q', '→', '≡']
+    );
 });
 
 Deno.test('evaluate RPN', () => {
@@ -169,6 +181,16 @@ Deno.test('evaluate RPN', () => {
             new Map([
                 ['p', true],
                 ['q', false],
+            ])
+        ),
+        true
+    );
+    assertEquals(
+        evaluatePropositionalLogicRPN(
+            ['p', '¬', 'q', '∨', 'p', 'q', '→', '≡'],
+            new Map([
+                ['p', false],
+                ['q', true],
             ])
         ),
         true
