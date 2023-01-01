@@ -9,20 +9,12 @@ export function evaluate(expression: string, values: Map<string, boolean>) {
 
 export function preprocessExpression(expression: string) {
     expression = expression
-        .replaceAll('and', '∧')
-        .replaceAll('or', '∨')
-        .replaceAll('not', '¬')
-        .replaceAll('imply', '→')
-        .replaceAll('equal', '≡')
-        .replaceAll('!', '¬')
-        .replaceAll('~', '¬')
-        .replaceAll('&', '∧')
-        .replaceAll('|', '∨')
-        .replaceAll('<->', '≡')
-        .replaceAll('->', '→')
-        .replaceAll('=', '≡')
-        .replaceAll('↔', '≡')
-        .replaceAll(/\s/g, '');
+        .replaceAll(/equal|=|↔|<->/gi, '≡')
+        .replaceAll(/and|&/gi, '∧')
+        .replaceAll(/or|\|/gi, '∨')
+        .replaceAll(/not|!|~|-/gi, '¬')
+        .replaceAll(/imply|->/gi, '→')
+        .replaceAll(/\s/gi, '');
 
     // replace 𝑎 to 𝑧 with a to z
     for (let i = 0; i < 26; i++) {
