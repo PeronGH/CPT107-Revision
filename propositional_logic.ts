@@ -117,8 +117,6 @@ function evaluatePropositionalLogicRPN(
                 case '≡':
                     stack.push(stack.pop()! === stack.pop()!);
                     break;
-                default:
-                    throw new Error(`Invalid token: ${token}`);
             }
         } else {
             throw new Error(`Invalid token: ${token}`);
