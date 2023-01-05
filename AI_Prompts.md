@@ -18,15 +18,25 @@ Model Answer:
 Proof:
 
 Suppose $\sqrt{3}$ is rational, then $\sqrt{3}$ = $\frac{a}{b}$ for some (a,b) suppose we have $\frac{a}{b}$ in simplest form.
+
 $$ \sqrt{3}=\frac{a}{b} $$
+
 $$ a^2=3b^2 $$
+
 If b is even, then a is also even in which case a/b is not simplest form. If b is odd then a is also odd. Therefore:
+
 $$ a=2n+1 $$
+
 $$ b=2m+1 $$
+
 $$ (2n+1)^2=3(2m+1)^2 $$
+
 $$ 4n^2+4n+1=12m^2+12m+3 $$
+
 $$ 2n^2+2n=6m^2+6m+1 $$
+
 $$ 2(n^2+n)=2(3m^2+m)+1 $$
+
 Since $(n^2 + n)$ is an integer, the left hand side is even. Since $(3m^2+m)$ is an integer, the right hand side is odd and we have found a contradiction. Therefore our hypothesis is false.
 
 Now, please answer:

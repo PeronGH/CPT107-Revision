@@ -95,8 +95,8 @@ If every element in A is also in B, then A ⊆ B.
 
 - **Union**: A ∪ B = {x | x ∈ A or x ∈ B}
 - **Intersection**: A ∩ B = {x | x ∈ A and x ∈ B}
-- **Relative complement**: A − B = {x | x ∈ A and x ∉ B}
-- **Complement**: ∼ A = {x | x ∉ A} = U − A (U is the universal set)
+- **Relative complement**: A − B = {x | x ∈ A and x ∉ B} = A ∩ ∼ B
+- **Complement**: ∼A = {x | x ∉ A} = U − A (U is the universal set)
 - **Symmetric difference**: A ∆ B = {x | (x ∈ A and x ∉ B) or (x ∉ A and x ∈ B)}
 - **Power set**: Pow(A) = {C |C ⊆ A}
 - **Cartesian product**: A × B = {(a, b) | a ∈ A and b ∈ B}
